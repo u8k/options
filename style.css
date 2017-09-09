@@ -1,0 +1,220 @@
+body {
+  margin: 0px;
+  background-color: #153A5B;
+  text-align: center;
+  color: #EFE1AA;
+  font-family: sans-serif;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+    color: white;
+}
+
+.info {
+  width: 95vw;
+  max-width: 700px;
+  display: inline-block;
+}
+
+.end {
+  width: 95vw;
+  max-width: 400px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 15px;
+  box-shadow: 0px 2vmin 9vmin 4vmin black;
+  background-color: grey;
+  box-sizing: border-box;
+  height: 220px;
+}
+
+.highest {margin-bottom: 25px;}
+
+p {font-size: 18px;}
+
+.game {
+  height: 100vh;
+  max-height: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#main {
+  display: inline-block;
+  height: 100vmin;
+  width: 100vmin;
+  max-width: 500px;
+  max-height: 500px;
+  background-color: dimgrey;
+  background-color: #282C34;
+  overflow: hidden;
+  position: relative;
+  border-radius: 15px;
+}
+
+#ground {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: left .6s, top .6s;
+  transition-timing-function: linear;
+}
+
+.tile,
+#protag-layer {
+  height: 25vmin;
+  width: 25vmin;
+  max-width: 125px;
+  max-height: 125px;
+  overflow: hidden;
+  float: left;
+}
+
+#protag-layer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+[class^="sprite"] {
+  width: calc(100% * 8);
+  height: calc(102% * 3);
+}
+
+.sprite-0 {transform: translate(0, 0);}
+.sprite-1 {transform: translate(-12.5%, 0);}
+.sprite-2 {transform: translate(-25%, 0);}
+.sprite-3 {transform: translate(-37.5%, 0);}
+.sprite-4 {transform: translate(-50%, 0);}
+.sprite-5 {transform: translate(-62.5%, 0);}
+.sprite-6 {transform: translate(-75%, 0);}
+.sprite-7 {transform: translate(-87.5%, 0);}
+
+.sprite-8 {transform: translate(0, -33.6%);}
+.sprite-9 {transform: translate(-12.5%, -33.6%);}
+.sprite-10 {transform: translate(-25%, -33.6%);}
+.sprite-11 {transform: translate(-37.5%, -33.6%);}
+.sprite-12 {transform: translate(-50%, -33.6%);}
+.sprite-13 {transform: translate(-62.5%, -33.6%);}
+.sprite-14 {transform: translate(-75%, -33.6%);}
+.sprite-15 {transform: translate(-87.5%, -33.6%);}
+
+.sprite-16 {transform: translate(0, -66.66%);}
+.sprite-17 {transform: translate(-12.5%, -66.66%);}
+.sprite-18 {transform: translate(-25%, -66.66%);}
+.sprite-19 {transform: translate(-37.5%, -66.66%);}
+.sprite-20 {transform: translate(-50%, -66.66%);}
+.sprite-21 {transform: translate(-62.5%, -66.66%);}
+.sprite-22 {transform: translate(-75%, -66.66%);}
+.sprite-23 {transform: translate(-87.5%, -66.66%);}
+
+h1, h3, h4 {
+  margin: 0;
+}
+h3, h4 {
+  margin: 0;
+  font-weight: normal;
+}
+
+#bottom-container {
+  width: 100vmin;
+  max-width: 500px;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#d-pad {
+  position: relative;
+  height: 150px;
+  width: 140px;
+}
+
+knob {
+  font-size: 60px;
+  user-select: none;
+  cursor: pointer;
+}
+
+#left {
+  font-size: 68px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-52.2%);
+}
+#right {
+  font-size: 68px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-52.2%);
+}
+#up {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+}
+#down {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+}
+
+.button {
+  background-color: #282C34;
+  padding: 10px;
+  border-radius: 10px;
+  display: inline;
+  width: 50px;
+  user-select: none;
+  cursor: pointer;
+}
+
+#controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+#hud {
+  height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+@media only screen and (max-height: 500px) {
+  .title {display: none;}
+  .game {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  #bottom-container {
+    width: calc(100vw - 100vh);
+    flex-direction: column;
+    height: 100vh;
+  }
+  #main {
+
+  }
+}
+
+.removed {
+  display: none;
+}
