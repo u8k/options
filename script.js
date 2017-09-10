@@ -34,19 +34,29 @@ var init = function (moves, noRev, decr) { //set up the display and gridValues
   for (var i = 0; i < glo.dim; i++) {
     glo.values.push([]);
     for (var j = 0; j < glo.dim; j++) {
+      //set spot value
+      glo.values[i].push(Math.floor(Math.random()*(101)));
+      if (glo.values[i][j] > glo.highest) {glo.highest = glo.values[i][j];}
+      //
       var tile = document.createElement("div");
       tile.setAttribute('class', 'tile');
+      //
       var img = document.createElement("img");
       var rand = Math.floor(Math.random()*(12));
       if (rand > 9) {rand = 0;}
       else if (rand > 7) {rand = 1;}
       img.setAttribute('class', 'sprite-'+rand);
       img.setAttribute('src', 'img.png');
+      //
+      var stat = document.createElement("div");
+      stat.setAttribute('class', 'stat removed');
+      stat.setAttribute('id', 'stat'+i+','+j);
+      stat.innerHTML = glo.values[i][j];
+      //
       tile.appendChild(img);
+      tile.appendChild(stat);
       ground.appendChild(tile);
-      //set spot value
-      glo.values[i].push(Math.floor(Math.random()*(101)));
-      if (glo.values[i][j] > glo.highest) {glo.highest = glo.values[i][j];}
+
     }
   }
   protag.classList.add('sprite-16');
@@ -89,7 +99,9 @@ var move = function (dir) {
   glo.moving = true;
   if (glo.noRevisits) { //
     glo.values[oldPos[0]][oldPos[1]] = 0;
+    document.getElementById('stat'+oldPos[0]+','+oldPos[1]).innerHTML = 0;
   }
+  document.getElementById('stat'+oldPos[0]+','+oldPos[1]).classList.remove('removed');
   //slide the background
   var ground = document.getElementById('ground');
   var x = 25; //  tileSize, as percentage of mainWindow
@@ -116,6 +128,7 @@ var move = function (dir) {
         for (var i = 0; i < glo.values.length; i++) {
           for (var j = 0; j < glo.values[i].length; j++) {
             glo.values[i][j]--;
+            document.getElementById('stat'+i+','+j).innerHTML = glo.values[i][j];
           }
         }
       }

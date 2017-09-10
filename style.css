@@ -28,7 +28,7 @@ a:active {
   transform: translate(-50%, -50%);
   border-radius: 15px;
   box-shadow: 0px 2vmin 9vmin 4vmin black;
-  background-color: grey;
+  background-color: dimgrey;
   box-sizing: border-box;
   height: 220px;
 }
@@ -40,7 +40,7 @@ p {font-size: 18px;}
 .game {
   height: 100vh;
   max-height: 800px;
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
@@ -70,6 +70,7 @@ p {font-size: 18px;}
 
 .tile,
 #protag-layer {
+  position: relative;
   height: 25vmin;
   width: 25vmin;
   max-width: 125px;
@@ -78,11 +79,18 @@ p {font-size: 18px;}
   float: left;
 }
 
+.stat,
 #protag-layer {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.stat {
+  color: white;
+  font-size: 25px;
+  text-shadow: 2px 2px 4px black;
 }
 
 [class^="sprite"] {
@@ -200,16 +208,19 @@ knob {
   align-items: center;
 }
 
-@media only screen and (max-height: 500px) {
+@media only screen and (max-height: 700px) and (min-width: 500px) {
   .title {display: none;}
   .game {
+    max-width: 700px;
     flex-direction: row;
     justify-content: space-between;
   }
   #bottom-container {
     width: calc(100vw - 100vh);
+    max-width: 200px;
     flex-direction: column;
     height: 100vh;
+    max-height: 400px;
   }
 }
 
