@@ -184,25 +184,29 @@ var again = function () {
   }, 600);
 }
 
-window.onkeypress = function(e) {  //keyboard listner/handler
+window.onkeydown = function(e) {  //keyboard listner/handler
   var key = e.charCode || e.keyCode || e.which;
   switch (key) {
     case 32:  // space
       mine();
       return false;
       break;
+    case 38:
     case 87:  // W
     case 119:  // W
       move('top')
       break;
+    case 37:
     case 97:  // A
     case 65:  // A
       move('left')
       break;
+    case 40:
     case 83:  // S
     case 115:  // S
       move('bottom')
       break;
+    case 39:
     case 68:  // D
     case 100:  // D
       move('right')
