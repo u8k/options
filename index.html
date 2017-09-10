@@ -22,9 +22,9 @@
       <br><br><br>
       * * *
       <br><br><br>
-      using either the onscreen arrows or the awsd keys<br>
+      using either the onscreen arrows or the wasd keys<br>
       move around the board and find the spot of highest value<br>
-      click "mine", or press spacebar<br>
+      click "mine" or press spacebar<br>
       to extract said value<br>
       this will end the round<br><br><br>
     </p>
@@ -122,7 +122,7 @@
       at a particular problem<br>
       and successfully maximize value<br>
       but<br>
-      zooming out,<br>
+      zooming out<br>
       those extra resources<br>
       might have been better spent<br>
       on other problems<br>
@@ -196,14 +196,12 @@
         <h3 id="mov-rem">x</h3>
       </div>
 
-      <div id="controls">
-        <div id="d-pad">
-          <knob id="left" onclick="move('left')">◀</knob>
-          <knob id="right" onclick="move('right')">▶</knob>
-          <knob id="up" onclick="move('top')">▲</knob>
-          <knob id="down" onclick="move('bottom')">▼</knob>
-        </div>
-        <div id="mine" class="button" onclick="mine()">mine</div>
+      <div id="d-pad">
+        <knob id="left" onclick="move('left')"><img src="arrow.png"></knob>
+        <knob id="right" onclick="move('right')"><img src="arrow.png"></knob>
+        <knob id="up" onclick="move('top')"><img src="arrow.png"></knob>
+        <knob id="down" onclick="move('bottom')"><img src="arrow.png"></knob>
+        <knob id="mine" onclick="mine()">mine</knob>
       </div>
     </div>
 
@@ -257,7 +255,7 @@
   <div id="end-5" class="end removed">
     <p>your score:</p>
     <div id="score-5" class="score"></div>
-    <p>highest(initial) value:</p>
+    <p>highest (initial) value:</p>
     <div id="highest-5" class="highest"></div>
     <div class="button" onclick="again()">again</div>
     <div class="button" onclick="next()">onward</div>

@@ -109,7 +109,6 @@ var move = function (dir) {
       protag.classList.add('sprite-16');
       protag.classList.remove(frame1);
       protag.classList.remove(frame2);
-      document.getElementById('cur-spot-val').innerHTML = glo.values[glo.pos[0]][glo.pos[1]];
       glo.moveLimit--;
       document.getElementById('mov-rem').innerHTML = glo.moveLimit;
       glo.moving = false;
@@ -120,6 +119,7 @@ var move = function (dir) {
           }
         }
       }
+      document.getElementById('cur-spot-val').innerHTML = glo.values[glo.pos[0]][glo.pos[1]];
     }
   }
   var protag = document.getElementById('protag');

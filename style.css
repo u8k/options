@@ -138,41 +138,48 @@ h3, h4 {
 
 #d-pad {
   position: relative;
-  height: 150px;
-  width: 140px;
+  height: 125px;
+  width: 120px;
 }
 
 knob {
-  font-size: 60px;
   user-select: none;
   cursor: pointer;
+  position: absolute;
 }
 
 #left {
-  font-size: 68px;
-  position: absolute;
   left: 0;
   top: 50%;
-  transform: translateY(-52.2%);
+  transform: translateY(-53.75%) rotate(0.5turn) ;
 }
 #right {
-  font-size: 68px;
-  position: absolute;
   right: 0;
   top: 50%;
-  transform: translateY(-52.2%);
+  transform: translateY(-46%);
 }
 #up {
-  position: absolute;
   left: 50%;
   top: 0;
-  transform: translateX(-50%);
+  transform: translateX(-45.25%) rotate(0.75turn);
 }
 #down {
-  position: absolute;
   left: 50%;
   bottom: 0;
-  transform: translateX(-50%);
+  transform: translateX(-54.25%) rotate(0.25turn);
+}
+#mine {
+  width: 42px;
+  height: 42px;
+  box-sizing: border-box;
+  padding: 11px 0 0 0px;
+  color: #282C34;
+  background-color: #EFE1AA;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 3px;
+  font-weight: bold;
 }
 
 .button {
@@ -185,12 +192,6 @@ knob {
   cursor: pointer;
 }
 
-#controls {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-}
 #hud {
   height: 140px;
   display: flex;
@@ -209,9 +210,6 @@ knob {
     width: calc(100vw - 100vh);
     flex-direction: column;
     height: 100vh;
-  }
-  #main {
-
   }
 }
 
