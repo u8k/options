@@ -13,6 +13,8 @@ a:active {
     color: white;
 }
 
+h2 {text-decoration: underline;}
+
 .info {
   width: 95vw;
   max-width: 700px;
